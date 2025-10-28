@@ -10,18 +10,25 @@
 </head>
 <body>
 
-<nav style="position: fixed; top: 0; width: 100%; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 1000;">
-  <div style="max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px;">
+<nav>
+  <div class="nav-container">
     <!-- Logo -->
-    <a href="#hero">
-      <img src="./public/assets/img/logo-prowebia.png" alt="Prowebia" style="height:50px;">
+    <a href="#hero" class="logo">
+      <img src="./public/assets/img/logo-prowebia.png" alt="Prowebia" />
     </a>
 
+    <!-- Icône burger -->
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <!-- Menu -->
-    <ul style="display: flex; gap: 30px; list-style: none; margin: 0; padding: 0;">
-      <li><a href="#about" style="font-weight:bold; color:#4399C4; text-decoration:none;">Qui est Prowebia ?</a></li>
-      <li><a href="#services" style="font-weight:bold; color:#4399C4; text-decoration:none;">Services proposés</a></li>
-  <li><a href="#contact" style="font-weight:bold; color:#4399C4; text-decoration:none;">Contactez-moi</a></li>
+    <ul id="nav-menu">
+      <li><a href="#about">Qui est Prowebia ?</a></li>
+      <li><a href="#services">Services proposés</a></li>
+      <li><a href="#contact">Contactez-moi</a></li>
     </ul>
   </div>
 </nav>
@@ -185,5 +192,22 @@
 </script> -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="./public/assets/js/emailjs.js"></script>
+<script>
+  const burger = document.getElementById('burger');
+  const navMenu = document.getElementById('nav-menu');
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  // Ferme le menu après un clic sur un lien
+  document.querySelectorAll('#nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      burger.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+</script>
 </body>
 </html>
