@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prowebia - Formations et solutions numériques sur mesure, création de sites et applications, formation web et WordPress.">
+  <title>Prowebia - Formations et solutions numériques</title>
+<link rel="stylesheet" href="./public/assets/css/style.css">
+
+</head>
+<body>
+
+<nav style="position: fixed; top: 0; width: 100%; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 1000;">
+  <div style="max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px;">
+    <!-- Logo -->
+    <a href="#hero">
+      <img src="./public/assets/img/logo-prowebia.png" alt="Prowebia" style="height:50px;">
+    </a>
+
+    <!-- Menu -->
+    <ul style="display: flex; gap: 30px; list-style: none; margin: 0; padding: 0;">
+      <li><a href="#about" style="font-weight:bold; color:#4399C4; text-decoration:none;">Qui est Prowebia ?</a></li>
+      <li><a href="#services" style="font-weight:bold; color:#4399C4; text-decoration:none;">Services proposés</a></li>
+  <li><a href="#contact" style="font-weight:bold; color:#4399C4; text-decoration:none;">Contactez-moi</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header style="position: relative; height: 400px; overflow: hidden; color: white; display: flex; padding: 20px;" id="hero">
+  <!-- Image de fond -->
+<div id="hero-bg" style="position: absolute; top:0; left:0; width:100%; height:100%;
+            background-image: url('./public/assets/img/hero.jpg');
+            background-size: cover;
+            background-position: 50% 50%;
+            z-index:0;
+            transition: background-position 0.1s linear;"></div>
+
+<!-- <script>
+  const heroBg = document.getElementById('hero-bg');
+
+  // Mouvement automatique
+  let posX = 50; // position horizontale initiale en %
+  let posY = 50; // position verticale initiale en %
+  let dirX = 0.03; // vitesse horizontale
+  let dirY = 0.02; // vitesse verticale
+
+  function animateBackground() {
+    posX += dirX;
+    posY += dirY;
+
+    // rebond horizontal
+    if(posX > 60 || posX < 40) dirX = -dirX;
+    // rebond vertical
+    if(posY > 55 || posY < 45) dirY = -dirY;
+
+    heroBg.style.backgroundPosition = posX + '% ' + posY + '%';
+    requestAnimationFrame(animateBackground);
+  }
+
+  animateBackground();
+
+  // Effet parallax au scroll
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    // Décalage vertical léger proportionnel au scroll
+    heroBg.style.backgroundPosition = `${posX}% ${posY + scrollTop * 0.05}%`;
+  });
+</script> -->
+
+  <!-- SVG réseau avec lignes et points animés -->
+  <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice"
+       style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; overflow: visible;">
+    <!-- Lignes -->
+    <path id="line1" d="M50,50 L200,100 L350,50 L500,120" stroke="#4399C4" stroke-width="1" fill="none" opacity="0.3"/>
+    <path id="line2" d="M100,300 L250,250 L400,320 L600,280" stroke="#4399C4" stroke-width="1" fill="none" opacity="0.3"/>
+    <path id="line3" d="M50,200 L180,150 L350,220 L550,180" stroke="#4399C4" stroke-width="1" fill="none" opacity="0.3"/>
+    <path id="line4" d="M600,50 L650,150 L700,80" stroke="#4399C4" stroke-width="1" fill="none" opacity="0.3"/>
+    <path id="line5" d="M300,350 L400,300 L500,370 L650,330" stroke="#4399C4" stroke-width="1" fill="none" opacity="0.3"/>
+
+    <!-- Points animés -->
+    <circle r="5" fill="#4399C4">
+      <animateMotion dur="25s" repeatCount="indefinite">
+        <mpath href="#line1"/>
+      </animateMotion>
+    </circle>
+    <circle r="4" fill="#4399C4">
+      <animateMotion dur="28s" repeatCount="indefinite" begin="2s">
+        <mpath href="#line2"/>
+      </animateMotion>
+    </circle>
+    <circle r="5" fill="#4399C4">
+      <animateMotion dur="30s" repeatCount="indefinite" begin="1s">
+        <mpath href="#line3"/>
+      </animateMotion>
+    </circle>
+    <circle r="4" fill="#4399C4">
+      <animateMotion dur="35s" repeatCount="indefinite" begin="3s">
+        <mpath href="#line4"/>
+      </animateMotion>
+    </circle>
+    <circle r="5" fill="#4399C4">
+      <animateMotion dur="40s" repeatCount="indefinite" begin="4s">
+        <mpath href="#line5"/>
+      </animateMotion>
+    </circle>
+  </svg>
+
+  <!-- Contenu gauche : H1 + baseline -->
+  <div style="position: relative; z-index: 2; flex:1; display: flex; flex-direction: column; justify-content: center;">
+    <h1 style="font-size: 2.5rem; margin:0;">Prowebia</h1>
+    <p style=" color:#000; font-size: 1.2rem; margin-top: 5px;">Formateur web et solutions numériques sur mesure</p>
+  </div>
+
+  <!-- Contenu droite : bouton en bas à gauche -->
+  <div style="position: relative; z-index: 2; flex:1; display: flex; align-items: flex-end; justify-content: flex-end; padding-left: 20px; padding-bottom: 15px;">
+    <a href="#contact" class="cta-button" style="background:#4399C4; color:white; padding:12px 25px; border-radius:5px; font-weight:bold; text-decoration:none;">Contactez-moi !</a>
+  </div>
+</header>
+
+<section id="about">
+  <h2>À propos</h2>
+  <p>
+    Avec plus de 20 ans d’expérience dans le développement web et la formation numérique, je propose des formations professionnelles pour monter en compétences dans le web, le webdesign, la création de sites et l’utilisation de CMS comme WordPress. En tant que formateur et juré de titres professionnels accrédité AFPA, j’accompagne les candidats dans le cadre de certifications reconnues et assure un suivi pédagogique de qualité pour chaque projet ou formation.  
+     <a href="https://www.thierrylachat.fr" target="_blank" rel="noopener noreferrer">Thierry Lachat</a>
+  </p>
+</section>
+
+<section id="services">
+  <h2>Services proposés</h2>
+  <div class="services-container">
+    <div class="service-card">
+      <h3>
+        <!-- Icon code SVG simple -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm0 7l-10 5v6l10 5 10-5v-6l-10-5z"/></svg>
+        Formations
+      </h3>
+      <ul>
+        <li>Développement web (front-end / back-end / fullstack)</li>
+        <li>Webdesign et outils numériques</li>
+        <li>Formation CMS et WordPress</li>
+        <li>Préparation à la reconversion professionnelle</li>
+        <li>Accompagnement individuel et programmes sur-mesure</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>
+        Production
+      </h3>
+      <ul>
+        <li>Création de sites internet (vitrine, e-commerce)</li>
+        <li>Développement d’applications web</li>
+        <li>Maintenance et optimisation de sites WordPress et autres CMS</li>
+        <li>Solutions sur-mesure pour vos projets numériques</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contactez-moi</h2>
+  <form id="formContact">
+    <input type="hidden" name="title" value="Prowebia.fr">
+    <input type="text" placeholder="Nom" required name="name">
+    <input type="email" placeholder="Email" required name="email">
+    <textarea placeholder="Votre message" rows="5" required name="message"></textarea>
+    <button type="submit">Envoyer</button>
+    <div class="text-white mt-4" id="sentMessage"></div>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 Prowebia. Tous droits réservés.</p>
+</footer>
+
+<!-- <script>
+  // Simple scroll animation pour témoignages
+  const testimonial = document.querySelector('.testimonial');
+  window.addEventListener('scroll', () => {
+    const rect = testimonial.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+      testimonial.classList.add('visible');
+    }
+  });
+</script> -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="./public/assets/js/emailjs.js"></script>
+</body>
+</html>
