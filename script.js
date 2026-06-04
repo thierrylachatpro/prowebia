@@ -63,9 +63,10 @@ document.addEventListener('DOMContentLoaded',()=>{
  status.textContent='';
  const name=(form.name.value||'').trim();
  const email=(form.email.value||'').trim();
+ const phone=(form.phone.value||'').trim();
  const type=(form.type.value||'').trim();
  const message=(form.message.value||'').trim();
- if(!name||!email||!type||!message){
+ if(!name||!email||!phone||!type||!message){
  status.classList.add('is-error');
  status.textContent='Merci de remplir tous les champs.';
  return;
@@ -73,6 +74,11 @@ document.addEventListener('DOMContentLoaded',()=>{
  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
  status.classList.add('is-error');
  status.textContent='Adresse email invalide.';
+ return;
+}
+ if(!/^[\d\s\+\-\.()]{8,20}$/.test(phone)){
+ status.classList.add('is-error');
+ status.textContent='Numéro de téléphone invalide.';
  return;
 }
  const btn=form.querySelector('button[type="submit"]');
