@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded',()=>{
  const btn=form.querySelector('button[type="submit"]');
  btn.disabled=true;
  btn.textContent='Envoi en cours…';
- emailjs.sendForm('service_eln7o86','template_nyito7j',form)
+ emailjs.sendForm('service_eln7o86','template_w6uas5x',form)
  .then(()=>{
  status.classList.add('is-success');
  status.textContent='Merci!Votre message a bien été envoyé. Nous vous répondons sous 48h.';
